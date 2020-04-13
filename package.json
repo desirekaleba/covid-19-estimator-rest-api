@@ -7,12 +7,12 @@
     "test": "./src/__tests__"
   },
   "scripts": {
-    "build": "babel src --out-dir dist --ignore src/__tests__",
-    "dev": "babel-watch src/index.js",
-    "start": "nodemon --exec babel-node ./src/index.js",
+    "build": "babel --out-dir dist --ignore __tests__",
+    "dev": "babel-watch ./server.js",
+    "start": "nodemon --exec babel-node ./server.js",
     "test": "cross-env NODE_ENV=test jest --coverage --runInBand --detectOpenHandles --forceExit",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "lint": "eslint ./src/",
+    "coveralls": "cat coverage/lcov.info | coveralls",
+    "lint": "eslint ./*.js",
     "heroku-postbuild": "npm run start"
   },
   "keywords": [
