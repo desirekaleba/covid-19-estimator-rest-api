@@ -1,7 +1,7 @@
-import app from '../app.js';
+import app from '../app';
 import request from 'supertest';
 import json2xml from 'json2xml';
-import covid19ImpactEstimator from '../estimator/estimator.js';
+import covid19ImpactEstimator from '../estimator/estimator';
 
 const data = {
   region: {

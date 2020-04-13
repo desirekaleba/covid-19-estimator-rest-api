@@ -1,6 +1,6 @@
 import express from 'express';
 import json2xml from 'json2xml';
-import { appendLogger } from '../log/logger.js';
+import { appendLogger } from '../logs/logger';
 import { readFile } from 'fs';
 
 import covid19ImpactEstimator from '../estimator/estimator.js';
@@ -26,7 +26,7 @@ estimatorRouter.post('/xml', (req, res) => {
 estimatorRouter.get('/logs', (req, res) => {
   res.type('text/plain');
   res.status(200);
-  readFile('./logs.log', { encoding: 'utf-8' }, (err, data) => {
+  readFile('../../logs.log', { encoding: 'utf-8' }, (err, data) => {
     if (err) throw err;
     res.send(data);
   });
