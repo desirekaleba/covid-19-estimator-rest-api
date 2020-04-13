@@ -1,5 +1,8 @@
 # #BuildForSDG assessment REST-api
+
+[![Build Status](https://travis-ci.org/desirekaleba/covid-19-estimator-rest-api.svg?branch=master)](https://travis-ci.org/desirekaleba/covid-19-estimator-rest-api)
 [![Coverage Status](https://coveralls.io/repos/github/desirekaleba/covid-19-estimator-rest-api/badge.svg?branch=master)](https://coveralls.io/github/desirekaleba/covid-19-estimator-rest-api?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/0df932135202d2493110/maintainability)](https://codeclimate.com/github/desirekaleba/covid-19-estimator-rest-api/maintainability)
 
 > A simplified COVID-19 infection impact estimator api
 
