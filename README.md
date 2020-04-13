@@ -1,4 +1,5 @@
 # #BuildForSDG assessment REST-api
+[![Coverage Status](https://coveralls.io/repos/github/desirekaleba/covid-19-estimator-rest-api/badge.svg?branch=master)](https://coveralls.io/github/desirekaleba/covid-19-estimator-rest-api?branch=master)
 
 > A simplified COVID-19 infection impact estimator api
 
