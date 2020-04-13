@@ -16,8 +16,6 @@
     "api",
     "covid-19-estimator"
   ],
-  "author": "Desire Kaleba",
-  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "cross-env": "^7.0.2",
@@ -29,15 +27,16 @@
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
     "@babel/node": "^7.8.7",
-    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
     "babel-jest": "^25.3.0",
-    "jest": "^25.3.0",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.3.0",
     "nodemon": "^2.0.3",
     "supertest": "^4.0.2"
-  }
+  },
+  "author": "Desire Kaleba",
+  "license": "MIT"
 }
