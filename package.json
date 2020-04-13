@@ -2,12 +2,12 @@
   "name": "covid-19-estimator-rest-api",
   "version": "1.0.0",
   "description": "A REST api for covid-19-estimator",
-  "main": "./src/index.js",
+  "main": "server.js",
   "directories": {
-    "test": "./src/__tests__"
+    "test": "__tests__"
   },
   "scripts": {
-    "build": "babel --out-dir dist --ignore __tests__",
+    "build": "babel ./ --out-dir dist --ignore __tests__",
     "dev": "babel-watch ./server.js",
     "start": "nodemon --exec babel-node ./server.js",
     "test": "cross-env NODE_ENV=test jest --coverage --runInBand --detectOpenHandles --forceExit",
