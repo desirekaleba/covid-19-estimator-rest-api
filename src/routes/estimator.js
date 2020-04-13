@@ -1,9 +1,9 @@
 import express from 'express';
 import json2xml from 'json2xml';
-import { appendLogger } from '../logs/logger';
 import { readFile } from 'fs';
+import appendLogger from '../logs/logger';
 
-import covid19ImpactEstimator from '../estimator/estimator.js';
+import covid19ImpactEstimator from '../estimator/estimator';
 
 const estimatorRouter = express.Router();
 
@@ -19,7 +19,7 @@ estimatorRouter.post('/json', (req, res) => {
 
 estimatorRouter.post('/xml', (req, res) => {
   res.type('text/xml');
-  let result = covid19ImpactEstimator(req.body);
+  const result = covid19ImpactEstimator(req.body);
   res.status(200).send(json2xml(result));
 });
 
@@ -32,4 +32,4 @@ estimatorRouter.get('/logs', (req, res) => {
   });
 });
 
-export { estimatorRouter };
+export default estimatorRouter;

@@ -1,7 +1,5 @@
-import app from '../app';
 import request from 'supertest';
-import json2xml from 'json2xml';
-import covid19ImpactEstimator from '../estimator/estimator';
+import app from '../app';
 
 const data = {
   region: {
@@ -16,7 +14,6 @@ const data = {
   population: 66622705,
   totalHospitalBeds: 1380614
 };
-const xml_data = json2xml(covid19ImpactEstimator(data));
 
 describe('/api/v1/on-covid-19', () => {
   describe('POST on /api/v1/on-covid-19, /api/v1/on-covid-19/json and /api/v1/on-covid-19/xml', () => {
