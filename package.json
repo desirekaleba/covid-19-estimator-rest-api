@@ -9,7 +9,7 @@
   "scripts": {
     "start": "nodemon --exec babel-node ./src/index.js",
     "test": "cross-env NODE_ENV=test jest --coverage --runInBand --detectOpenHandles --forceExit",
-    "coverage": "cat ./coverage/lcov.info | coveralls",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint ./src/",
     "lint:fix": "eslint ./src/ --fix"
   },
