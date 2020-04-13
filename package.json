@@ -12,7 +12,8 @@
     "start": "nodemon --exec babel-node ./src/index.js",
     "test": "cross-env NODE_ENV=test jest --coverage --runInBand --detectOpenHandles --forceExit",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "lint": "eslint ./src/"
+    "lint": "eslint ./src/",
+    "heroku-postbuild": "npm run start"
   },
   "keywords": [
     "REST",
