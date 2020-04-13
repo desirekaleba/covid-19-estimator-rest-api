@@ -7,9 +7,11 @@
     "test": "./src/__tests__"
   },
   "scripts": {
+    "build": "babel src --out-dir dist --ignore src/__tests__",
+    "dev": "babel-watch src/index.js",
     "start": "nodemon --exec babel-node ./src/index.js",
     "test": "cross-env NODE_ENV=test jest --coverage --runInBand --detectOpenHandles --forceExit",
-    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint ./src/",
     "lint:fix": "eslint ./src/ --fix"
   },
@@ -19,6 +21,7 @@
     "covid-19-estimator"
   ],
   "dependencies": {
+    "babel-watch": "^7.0.0",
     "cors": "^2.8.5",
     "coveralls": "^3.0.11",
     "cross-env": "^7.0.2",
