@@ -13,7 +13,7 @@ app.use('/api/v1/on-covid-19/', estimatorRouter);
 app.get('/', (req, res) => {
   res.status(200).send(`Welcome to covid19 REST api, 
     you can POST json data and i will respond
-    with covid19 data estimation either in json format if you hits /api/v1/on-covid-19/json or xml if /xml`);
+    with covid19 data estimation either in json format if you hit /api/v1/on-covid-19/json or xml if /xml`);
 });
 
 export default app;
