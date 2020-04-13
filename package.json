@@ -45,5 +45,8 @@
     "supertest": "^4.0.2"
   },
   "author": "Desire Kaleba",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": "12.7.0"
+  }
 }
