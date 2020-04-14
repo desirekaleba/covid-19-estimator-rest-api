@@ -16,7 +16,7 @@ const logger = _winston.default.createLogger({
     format: 'YYYY-MM-DD HH:mm:ss:ms'
   }), _winston.default.format.printf(info => `${info.message}`)),
   transports: [new _winston.default.transports.File({
-    filename: '../logs.log',
+    filename: './logs.log',
     json: false
   })]
 });
