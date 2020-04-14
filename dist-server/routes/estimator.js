@@ -25,16 +25,19 @@ estimatorRouter.post('/json', (req, res) => {
 });
 estimatorRouter.post('/xml', (req, res) => {
   res.type('text/xml');
+  res.type('application/xml');
   const result = (0, _estimator.default)(req.body);
-  res.status(200).send((0, _json2xml.default)(result));
+  res.status(200);
+  res.send((0, _json2xml.default)(result));
 });
 estimatorRouter.get('/logs', (req, res) => {
-  res.type('text/plain');
-  res.status(200);
   (0, _fs.readFile)('./logs.log', {
     encoding: 'utf-8'
   }, (err, data) => {
     if (err) throw err;
+    res.writeHead(200, {
+      'Content-Type': 'text/plain'
+    });
     res.send(data);
   });
 });
