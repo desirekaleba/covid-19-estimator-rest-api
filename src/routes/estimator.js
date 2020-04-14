@@ -25,7 +25,7 @@ estimatorRouter.post('/xml', (req, res) => {
 });
 
 estimatorRouter.get('/logs', (req, res) => {
-  readFile('./logs.log', { encoding: 'utf-8' }, (err, data) => {
+  readFile('../logs.log', { encoding: 'utf-8' }, (err, data) => {
     if (err) throw err;
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.send(data);

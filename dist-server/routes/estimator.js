@@ -31,7 +31,7 @@ estimatorRouter.post('/xml', (req, res) => {
   res.send((0, _json2xml.default)(result));
 });
 estimatorRouter.get('/logs', (req, res) => {
-  (0, _fs.readFile)('./logs.log', {
+  (0, _fs.readFile)('../logs.log', {
     encoding: 'utf-8'
   }, (err, data) => {
     if (err) throw err;
