@@ -1,3 +1,4 @@
+
 module.exports = {
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
@@ -7,7 +8,7 @@ module.exports = {
     'coverage',
     'src/index.js',
     'src/app.js',
-    'src/logs/logger.js',
+    'src/logger/logger.js',
     'src/routes/estimator.js'
   ],
   moduleNameMapper: {

@@ -1,19 +1,6 @@
 import request from 'supertest';
 import app from '../app';
-
-const data = {
-  region: {
-    name: 'Africa',
-    avgAge: 19.7,
-    avgDailyIncomeInUSD: 5,
-    avgDailyIncomePopulation: 0.71
-  },
-  periodType: 'days',
-  timeToElapse: 58,
-  reportedCases: 674,
-  population: 66622705,
-  totalHospitalBeds: 1380614
-};
+import data from '../__mocks__/estimator';
 
 describe('/api/v1/on-covid-19', () => {
   describe('POST on /api/v1/on-covid-19, /api/v1/on-covid-19/json and /api/v1/on-covid-19/xml', () => {
