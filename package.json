@@ -13,8 +13,7 @@
     "watch:dev": "nodemon",
     "test": "cross-env NODE_ENV=test jest --coverage --runInBand --detectOpenHandles --forceExit",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "lint": "eslint ./src/",
-    "lint:fix": "eslint ./src/ --fix"
+    "lint": "eslint ./src/"
   },
   "keywords": [
     "REST",
