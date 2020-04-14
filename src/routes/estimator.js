@@ -25,10 +25,10 @@ estimatorRouter.post('/xml', (req, res) => {
 });
 
 estimatorRouter.get('/logs', (req, res) => {
+  res.type('text/plain');
+    res.status(200);
   readFile('./logs.log', { encoding: 'utf-8' }, (err, data) => {
     if (err) throw err;
-    res.type('text/plain');
-    res.status(200);
     res.send(data);
   });
 });
