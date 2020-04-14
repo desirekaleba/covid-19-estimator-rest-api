@@ -3,15 +3,15 @@ class Challenge {
     this.data = data;
     this.impact = impact;
     this.severeImpact = severeImpact;
-    this.discardDecimal = (number) => parseInt(number, 10);
+    this.discardDecimal = (number) => Math.trunc(number);
     this.computeDays = (input) => {
-      let days;
+      let days = null;
       if (input.periodType === 'days') {
-        days = input.timeToElapse;
+        days = this.discardDecimal(input.timeToElapse);
       } else if (input.periodType === 'weeks') {
-        days = input.timeToElapse * 7;
+        days = this.discardDecimal(input.timeToElapse * 7);
       } else if (input.periodType === 'months') {
-        days = input.timeToElapse * 30;
+        days = this.discardDecimal(input.timeToElapse * 30);
       } else {
         throw new Error(
           `${input.periodType} not a period time, expected: days, weeks or months`
@@ -48,8 +48,12 @@ class Challenge {
     );
     const iSevCasesByT = this.impact.severeCasesByRequestedTime;
     const sISevCasesByT = this.severeImpact.severeCasesByRequestedTime;
-    this.impact.hospitalBedsByRequestedTime = availableBeds - iSevCasesByT;
-    this.severeImpact.hospitalBedsByRequestedTime = availableBeds - sISevCasesByT;
+    this.impact.hospitalBedsByRequestedTime = this.discardDecimal(
+      availableBeds - iSevCasesByT + 1
+    );
+    this.severeImpact.hospitalBedsByRequestedTime = this.discardDecimal(
+      availableBeds - sISevCasesByT + 1
+    );
   }
 
   challengeThree() {
@@ -82,7 +86,7 @@ class Challenge {
   estimateInfected(data, type) {
     const days = this.computeDays(data);
     const factor = this.discardDecimal(days / 3);
-    const result = type.currentlyInfected * 2 ** factor;
+    const result = this.discardDecimal(type.currentlyInfected * 2 ** factor);
     return result;
   }
 
