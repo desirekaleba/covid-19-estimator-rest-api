@@ -17,8 +17,7 @@ estimatorRouter.post('/json', (req, res) => {
 });
 
 estimatorRouter.post('/xml', (req, res) => {
-  res.type('text/xml');
-  res.type('application/xml');
+  res.type('text/xml' && 'application/xml');
   const result = covid19ImpactEstimator(req.body);
   res.status(200);
   res.send(json2xml(result));

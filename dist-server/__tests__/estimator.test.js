@@ -27,7 +27,7 @@ describe('/api/v1/on-covid-19', () => {
     test('should respond with xml and 200 status code', async done => {
       const res = await (0, _supertest.default)(_app.default).post('/api/v1/on-covid-19/xml').send(_estimator.default);
       expect(res.status).toBe(200);
-      expect(res.type).toBe('text/xml');
+      expect(res.type).toBe('application/xml');
       done();
     });
   });

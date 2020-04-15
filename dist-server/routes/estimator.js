@@ -24,8 +24,7 @@ estimatorRouter.post('/json', (req, res) => {
   res.status(200).json((0, _estimator.default)(req.body));
 });
 estimatorRouter.post('/xml', (req, res) => {
-  res.type('text/xml');
-  res.type('application/xml');
+  res.type('text/xml' && 'application/xml');
   const result = (0, _estimator.default)(req.body);
   res.status(200);
   res.send((0, _json2xml.default)(result));
