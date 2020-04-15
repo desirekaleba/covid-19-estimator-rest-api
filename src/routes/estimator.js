@@ -6,14 +6,16 @@ import covid19ImpactEstimator from '../estimator/estimator';
 
 const estimatorRouter = express.Router();
 
+function twoFirstRoutesResult(req, res) {
+  res.status(200).json(covid19ImpactEstimator(req.body));
+}
+
 estimatorRouter.post('/', (req, res) => {
-  res.status(200)
-    .json(covid19ImpactEstimator(req.body));
+  twoFirstRoutesResult(req, res);
 });
 
 estimatorRouter.post('/json', (req, res) => {
-  res.status(200)
-    .json(covid19ImpactEstimator(req.body));
+  twoFirstRoutesResult(req, res);
 });
 
 estimatorRouter.post('/xml', (req, res) => {
@@ -25,7 +27,7 @@ estimatorRouter.post('/xml', (req, res) => {
 
 estimatorRouter.get('/logs', (req, res) => {
   res.type('text/plain');
-    res.status(200);
+  res.status(200);
   readFile('./logs.log', { encoding: 'utf-8' }, (err, data) => {
     if (err) throw err;
     res.send(data);
